@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous">
+   <title>Contato</title>
+
+
+
+   <link rel="stylesheet" type="text/css" href="contato.css">
+
+   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.js"></script>
+   <script src="http://jqueryvalidation.org/files/dist/jquery.validate.js"></script>
+   <script>
+      /* $("#form-validate").validate({
+           rules: {
+              nome: {
+                 required: true,
+                 minlength: 3
+              }
+           },
+           messages: {
+              nome: {
+                 required: "Por favor, informe seu nome",
+                 minlength: "O nome deve ter pelo menos 3 caracteres"
+              }
+           }
+        });*/
+
+      $(document).ready(function () {
+        
+         $("#btn-enviar").click(function (e) {
+            $('.alert').hide()
+            e.preventDefault()
+            var nome = $("#nome").val()
+            var email = $("#email").val()
+            var telefone = $("#telefone").val()
+            var msg = $("#msg").val()
+            if (nome == "") {
+               $(".alert1").html("Nome não pode ser vazio");
+               $(".alert1").addClass("alert-danger");
+               $('#alert1').fadeIn()
+               
+               $("#nome").focus();
+            } else if (email == "") {
+               
+               $(".alert2").html("Email não pode ser vazio");
+               $(".alert2").addClass("alert-danger");
+               $('.alert2').fadeIn()
+               $("#email").focus();
+            } else if (telefone == "") {
+               $(".alert3").html("Telefone não pode ser vazio");
+               $(".alert3").addClass("alert-danger");
+               $('.alert3').fadeIn()
+               $("#telefone").focus();
+            } else if (msg == "") {
+               $(".alert4").html("Mensagem não pode ser vazia");
+               $(".alert4").addClass("alert-danger");
+               $('.alert4').fadeIn()
+               $("#msg").focus();
+            } else {
+               alert("Cadastrado com sucesso")
+            }
+         })
+      })
+   </script>
+
+
+
+</head>
+
+
+<body>
+   <script>
+      //botao para mostrar que a pagina selecionada é a correspondente=
+      function paginaRef() {
+         alert("Você já está na página de contato");
+      }
+   </script>
+
+   <nav>
+      <ul class="main-nav">
+         <li><a href="javascript:void(0)" onclick="window.location.href='../inicio/pinicial.html'">Pagina Inicial</a>
+         <li><a href="javascript:void(0)" onclick="window.location.href='../produto/produto.html'">Produtos</a></li>
+         <li><a href="javascript:void(0)" onclick="window.location.href='../sobre/sobre.html'">Sobre</a></li>
+         <li><a href="javascript:void(0)" onclick="window.location.href='../mapa/mapa.html'">Como Chegar</a></li>
+         <li><a href="javascript:void(0)" onclick="paginaRef()">Contato</a></li>
+         </li>
+      </ul>
+   </nav>
+
+   <form id="form-validate">
+      <div class="form-container" role="form">
+         <div class="form-group">
+            <label for="nome"><strong></strong>Nome</strong></label>
+            <input name="nome" id="nome" class="form-control" placeholder="Seu nome">
+            <p class="alert alert1" id="alert1">
+
+            </p>
+         </div>
+         <div class="form-group">
+            <label for="email"><strong>Endereço de email</strong></label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Seu email">
+            <small id="emailHelp" id="email" style="color: rgb(212, 212, 212);"><strong>Nunca vamos compartilhar seu
+                  email, com
+                  ninguém.</strong></small>
+            <p class="alert alert2">
+
+            </p>
+         </div>
+
+         <div class="form-group">
+            <label for="telefone"><strong>Telefone</strong></label>
+            <input type="tel" id="telefone" class="form-control tel" id="tel" placeholder="Seu telefone">
+            <p class="alert alert3">
+
+            </p>
+         </div>
+
+         <div class="form-group">
+            <label for="mensagem"><strong>Mensagem</strong></label>
+            <textarea class="form-control" id="msg" placeholder="Sua mensagem"></textarea>
+            <p class="alert alert4">
+
+            </p>
+         </div>
+
+         <button type="enviar" id="btn-enviar" class="btn btn-primary">Enviar</button>
+
+      </div>
+
+      <div class="conheca">
+
+      </div>
+   </form>
+
+
+
+
+   <script>
+      $(document).ready(function ($) {
+         $('.tel').mask('(00) 00000-0000');
+      });
+   </script>
+
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"></script>
+      <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"></script>
+
+</body>
+
+
+<footer class="page-footer font-small blue">
+
+
+   <div class="footer-copyright text-center py-3 fundo"><strong>© 2019 IFSP</strong>
+      <a href="https://facebook.com/Joohszz/"> <strong>João Alberto Rodrigues Rossi</strong></a>
+   </div>
+
+</footer>
+
+
+
+
+
+</html>

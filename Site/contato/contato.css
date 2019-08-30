@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro|Shadows+Into+Light|Indie+Flower|Lobster|Mali|Nunito:200');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Nunito, sans-serif;
+}
+
+label.error{
+   display: none!important;
+ }
+
+ .error{
+   background-color: red;
+ }
+
+body {
+    background-image: url(../images/img.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+
+
+.main-nav {
+   display: flex;
+   align-items: center;
+   list-style: none;
+}
+
+.main-nav a:hover {
+   background-color: rgba(255, 255, 255, 0.171);
+}
+
+.main-nav li {
+   width: 120vw;
+   background-color: black;
+}
+
+.form-container {
+   margin: 10% 25% 10% 25%;
+   color: rgba(0, 255, 200, 0.932);
+}
+
+.fundo {
+   background-color: black;
+}
+
+.conheca {
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+   padding-top: 5%;
+   margin: 0 25% 10% 25%;
+}
+
+.main-nav a {
+   color: #fff;
+   display: block;
+   padding: 10px;
+   text-decoration: none;
+   font-size: 20px;
+   text-align: center;
+}
